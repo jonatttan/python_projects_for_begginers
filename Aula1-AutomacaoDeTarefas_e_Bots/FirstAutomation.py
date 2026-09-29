@@ -31,39 +31,53 @@ time.sleep(3)
 
 # Start registration of products
 
-# Select and fills in the Product Code field
-pyautogui.click(x=735, y=253)
-pyautogui.write("cod produto")
+# Config Pandas
+import pandas as pd
 
-# Select and fills in the Product Brand field
-pyautogui.press("tab")
-pyautogui.write("marca produto")
+table = pd.read_csv("products.csv")
 
-# Select and fills in the Product Tipe field
-pyautogui.press("tab")
-pyautogui.write("tipo produto")
+for row in table.index:
+    # Select and fills in the Product Code field
+    pyautogui.click(x=735, y=253)
+    productCode = table.loc[row, "codigo"]
+    pyautogui.write(productCode)
 
-# Select and fills in the Product Category field
-pyautogui.press("tab")
-pyautogui.write("categoria produto")
+    # Select and fills in the Product Brand field
+    pyautogui.press("tab")
+    productBrand = table.loc[row, "marca"]
+    pyautogui.write(productBrand)
 
-# Select and fills in the Product Unit Price field
-pyautogui.press("tab")
-pyautogui.write("preco unitario")
+    # Select and fills in the Product Tipe field
+    pyautogui.press("tab")
+    productType = table.loc[row, "tipo"]
+    pyautogui.write(productType)
 
-# Select and fills in the Product Cost field
-pyautogui.press("tab")
-pyautogui.write("custo produto")
+    # Select and fills in the Product Category field
+    pyautogui.press("tab")
+    productCategory = str(table.loc[row, "categoria"])
+    pyautogui.write(productCategory)
 
-# Select and fills in the Observations field
-pyautogui.press("tab")
-pyautogui.write("observacoes")
+    # Select and fills in the Product Unit Price field
+    pyautogui.press("tab")
+    productUnitPrice = str(table.loc[row, "preco_unitario"])
+    pyautogui.write(productUnitPrice)
 
-# Select and press submit button
-pyautogui.press("tab")
-pyautogui.press("enter")
+    # Select and fills in the Product Cost field
+    pyautogui.press("tab")
+    productCost = str(table.loc[row, "custo"])
+    pyautogui.write(productCost)
 
-# Return to the top of the page
-pyautogui.scroll(3000)
+    # Select and fills in the Observations field
+    pyautogui.press("tab")
+    productObservations = str(table.loc[row, "obs"])
+    if productObservations != "nan":
+        pyautogui.write(productObservations)
+
+    # Select and press submit button
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+
+    # Return to the top of the page
+    pyautogui.scroll(3000)
 
 
