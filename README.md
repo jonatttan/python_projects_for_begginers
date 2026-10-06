@@ -36,10 +36,17 @@ A proposta é aplicar conceitos de programação com **Python** em cenários pr�
 
 Trata-se de um projeto que visa automatizar uma tarefa de natureza repetitiva. Supondo que um colaborador teria de acessar o mesmo formulário diversas vezes para cadastrar produtos de acordo com uma base de dados que lhe foi entregue, com soluções disponíveis hoje seria uma perda de tempo e poderia fácilmente levar a erro humano. Hoje com a IA poderiamos pegar essa base de dados - talvez em imagem ou outro fomato - e pedir para que ela a transformasse em uma base de dados simples, como csv, e então fariamos uma automação como essa para evitar um colaborador repetir o processo por centenas de veses. Desse modo, o colaborador pode executar outra tarefa e apenas revisar esta quando finalizada.
 
-> 💡 **Ideia central:** transformar uma tarefa manual em um processo automatizado, simples de executar e fácil de manter.
+> 💡 **Ideia central:** Transformar uma tarefa manual em um processo automatizado, simples de executar e fácil de manter.
 
 ---
 
+### 🗃️ Análise de dados
+
+Esse é um projeto voltado pra análise de dados de um negócio fictício de assinaturas. Nele são utilizadas principalmente as bibliotecas Pandas e Plotly para manipular base de dados com filtragem, exclusão e traduzir em gráficos para então serem analisados afim de encontrar a melhor estratégia juntamente com o time responsável. Achei bem interessante, explorei alguns outros pontos e foi uma experiência muito relevante.
+
+> 💡 **Ideia central:** Usar o poder do Python para análise estratégica de negócio.
+
+---
 ### 🎯 Objetivos
 
 - 🕒 Reduzir o tempo gasto em atividades repetitivas.
@@ -63,7 +70,6 @@ Trata-se de um projeto que visa automatizar uma tarefa de natureza repetitiva. S
 ## 📸 Demonstrações
 
 > Demonstração do projeto de automação
-
 
 ![Demonstração do projeto de automação](Task_automation_and_Bots/sample_images/PythonAutomationProjectDemonstration.gif)
 
