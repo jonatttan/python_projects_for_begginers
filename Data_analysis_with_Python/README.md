@@ -30,14 +30,11 @@ Esse projeto propõe o desafio de entender por meio de análise de dados o probl
 
 ### 🎯 Objetivos
 
-Visualizar a base de dados
-Tratar a base de dados removendo coluna desnecessária e algumas linhas que possuem dados faltando ou mesmo incorretos
-
 - 🕒 Estabelecer o perfil dos clientes que cancelam.
-- ⚙️ 
-- 🧩 
-- 📚 
-- 🚀 
+- ⚙️ Filtrar informações relevantes
+- 🧩 Encontrar pontos/ processos problemáticos
+- 📚 Fornecer uma estimativa em percentual pós correção dos problemas
+- 🚀 Alinhar as melhores abordagens
 
 ---
 
@@ -53,10 +50,9 @@ Tratar a base de dados removendo coluna desnecessária e algumas linhas que poss
 
 ## 📸 Demonstração
 
-> Demonstração do projeto de automação
+> Demonstração do projeto de automação.
 
-
-![Demonstração do projeto de ...](sample_images/..... .gif)
+![Demonstração do projeto de análise de dados](sample_images/PythonDataAnalysisProjectDemonstration.gif)
 
 ---
 
