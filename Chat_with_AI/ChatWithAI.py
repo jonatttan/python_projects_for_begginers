@@ -1,4 +1,15 @@
 import streamlit as st
+from openai import OpenAI
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv("AI_API_KEY")
+
+ia_model = OpenAI(
+    api_key = api_key,
+    base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
+)
 
 st.write("AI chatbot")
 
@@ -20,9 +31,12 @@ if user_input:
     user_message_to_store = {"role": "user", "content": user_input}
     st.session_state["message_list"].append(user_message_to_store)
 
-    ai_output = "You ask: " + user_input
-    st.chat_message("assistant").write(ai_output)
-    assistant_message_to_store = {"role": "assistant", "content": ai_output}
-    st.session_state["message_list"].append(assistant_message_to_store)
+    ai_answer = ia_model.chat.completions.create(
+        messages = st.session_state["message_list"],
+        model="gemini-flash-lite-latest"
+    )
+    ai_answer_to_show = ai_answer.choices[0].message.content
 
-print(st.session_state["message_list"])
+    st.chat_message("assistant").write(ai_answer_to_show)
+    assistant_message_to_store = {"role": "assistant", "content": ai_answer}
+    st.session_state["message_list"].append(assistant_message_to_store)
