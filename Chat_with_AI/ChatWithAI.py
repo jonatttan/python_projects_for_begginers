@@ -11,7 +11,7 @@ ia_model = OpenAI(
     base_url = "https://generativelanguage.googleapis.com/v1beta/openai"
 )
 
-st.write("AI chatbot")
+st.write("## AI chatbot")
 
 if not "message_list" in st.session_state:
     st.session_state["message_list"] = []
@@ -38,5 +38,5 @@ if user_input:
     ai_answer_to_show = ai_answer.choices[0].message.content
 
     st.chat_message("assistant").write(ai_answer_to_show)
-    assistant_message_to_store = {"role": "assistant", "content": ai_answer}
+    assistant_message_to_store = {"role": "assistant", "content": ai_answer_to_show}
     st.session_state["message_list"].append(assistant_message_to_store)
