@@ -21,3 +21,13 @@ if send_button:
 
 st.write("## Vendas cadastradas")
 st.dataframe(sales_table)
+
+st.write("## Dashboard")
+total_value = sales_table["valor"].sum()
+st.metric("Faturamento total", f"R${total_value}")
+
+chart_bar = px.bar(sales_table, x="vendedor", y="valor", color="produto")
+st.plotly_chart(chart_bar)
+
+chart_pie = px.pie(sales_table, names="produto", values="valor")
+st.plotly_chart(chart_pie)
